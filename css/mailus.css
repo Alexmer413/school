@@ -1,0 +1,178 @@
+.mailus {
+  position: relative;
+  position: fixed;
+  right: 75px;
+  bottom: 75px;
+  z-index: 15;
+}
+
+img.close {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  -webkit-transition: -webkit-transform 0.4s ease 0s;
+  transition: -webkit-transform 0.4s ease 0s;
+  transition: transform 0.4s ease 0s;
+  transition: transform 0.4s ease 0s, -webkit-transform 0.4s ease 0s;
+}
+
+img.open {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.4s ease 0s;
+  transition: -webkit-transform 0.4s ease 0s;
+  transition: transform 0.4s ease 0s;
+  transition: transform 0.4s ease 0s, -webkit-transform 0.4s ease 0s;
+}
+
+.mailus__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 55px;
+  height: 55px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 10px rgb(40, 58, 106);
+          box-shadow: 0px 0px 10px rgb(40, 58, 106);
+  -webkit-transition: -webkit-transform 1s ease 0s;
+  transition: -webkit-transform 1s ease 0s;
+  transition: transform 1s ease 0s;
+  transition: transform 1s ease 0s, -webkit-transform 1s ease 0s;
+  -webkit-animation-name: mailus;
+          animation-name: mailus;
+  -webkit-animation-duration: 0.9s;
+          animation-duration: 0.9s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+.mailus__img:hover {
+  -webkit-animation-name: none;
+          animation-name: none;
+  -webkit-box-shadow: 0px 0px 15px rgb(40, 58, 106);
+          box-shadow: 0px 0px 15px rgb(40, 58, 106);
+}
+.mailus__img._active {
+  -webkit-animation-name: none;
+          animation-name: none;
+  -webkit-box-shadow: 0px 0px 15px rgb(40, 58, 106);
+          box-shadow: 0px 0px 15px rgb(40, 58, 106);
+}
+.mailus__img._active img.open {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 0.4s ease 0s;
+  transition: -webkit-transform 0.4s ease 0s;
+  transition: transform 0.4s ease 0s;
+  transition: transform 0.4s ease 0s, -webkit-transform 0.4s ease 0s;
+}
+.mailus__img._active img.close {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.4s ease 0s;
+  transition: -webkit-transform 0.4s ease 0s;
+  transition: transform 0.4s ease 0s;
+  transition: transform 0.4s ease 0s, -webkit-transform 0.4s ease 0s;
+}
+.mailus__img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mailus__img._active:hover {
+  -webkit-box-shadow: 0px 0px 20px rgb(40, 58, 106);
+          box-shadow: 0px 0px 20px rgb(40, 58, 106);
+}
+
+.mailus__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 10px rgb(40, 58, 106);
+          box-shadow: 0px 0px 10px rgb(40, 58, 106);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.mailus__item._active {
+  opacity: 1;
+  visibility: visible;
+}
+.mailus__item._active:nth-child(1) {
+  -webkit-transform: translateY(-125%);
+          transform: translateY(-125%);
+}
+.mailus__item._active:nth-child(2) {
+  -webkit-transform: translateY(-245%);
+          transform: translateY(-245%);
+}
+.mailus__item._active:nth-child(3) {
+  -webkit-transform: translateY(-365%);
+          transform: translateY(-365%);
+}
+.mailus__item:hover {
+  -webkit-box-shadow: 0px 0px 15px rgb(40, 58, 106);
+          box-shadow: 0px 0px 15px rgb(40, 58, 106);
+}
+.mailus__item img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@-webkit-keyframes mailus {
+  0% {
+    scale: 1;
+    -webkit-box-shadow: 0px 0px 10px rgb(40, 58, 106);
+            box-shadow: 0px 0px 10px rgb(40, 58, 106);
+  }
+  50% {
+    scale: 1;
+    -webkit-box-shadow: 0px 0px 10px rgb(40, 58, 106);
+            box-shadow: 0px 0px 10px rgb(40, 58, 106);
+  }
+  100% {
+    scale: 1.1;
+    -webkit-box-shadow: 0px 0px 15px rgb(40, 58, 106);
+            box-shadow: 0px 0px 15px rgb(40, 58, 106);
+  }
+}
+
+@keyframes mailus {
+  0% {
+    scale: 1;
+    -webkit-box-shadow: 0px 0px 10px rgb(40, 58, 106);
+            box-shadow: 0px 0px 10px rgb(40, 58, 106);
+  }
+  50% {
+    scale: 1;
+    -webkit-box-shadow: 0px 0px 10px rgb(40, 58, 106);
+            box-shadow: 0px 0px 10px rgb(40, 58, 106);
+  }
+  100% {
+    scale: 1.1;
+    -webkit-box-shadow: 0px 0px 15px rgb(40, 58, 106);
+            box-shadow: 0px 0px 15px rgb(40, 58, 106);
+  }
+}

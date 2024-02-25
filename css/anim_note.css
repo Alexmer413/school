@@ -1,0 +1,69 @@
+.fullscreen__anim {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 300px;
+  right: 50px;
+  z-index: 10;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-animation-name: anim;
+          animation-name: anim;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.fullscreen__anim img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@-webkit-keyframes anim {
+  0% {
+    top: 300px;
+    right: 50px;
+  }
+  25% {
+    top: 315px;
+    right: 90px;
+  }
+  50% {
+    top: 300px;
+    right: 120px;
+  }
+  75% {
+    top: 280px;
+    right: 70px;
+  }
+  100% {
+    top: 300px;
+    right: 50px;
+  }
+}
+
+@keyframes anim {
+  0% {
+    top: 300px;
+    right: 50px;
+  }
+  25% {
+    top: 315px;
+    right: 90px;
+  }
+  50% {
+    top: 300px;
+    right: 120px;
+  }
+  75% {
+    top: 280px;
+    right: 70px;
+  }
+  100% {
+    top: 300px;
+    right: 50px;
+  }
+}

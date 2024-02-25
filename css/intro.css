@@ -1,0 +1,78 @@
+.intro {
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#efb7b5), to(#fff));
+  background: linear-gradient(#efb7b5, #fff);
+  color: #3d405b;
+  font-family: montserrat, sans-serif;
+}
+
+.intro__container {
+  padding: 0px 30px;
+}
+
+.intro__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.intro__item {
+  width: 50%;
+}
+
+.intro__title {
+  font-size: 28px;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  font-weight: 600;
+  padding-left: 30px;
+}
+.intro__title span {
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+.list__item {
+  margin-bottom: 25px;
+  padding-left: 30px;
+  position: relative;
+  font-weight: 600;
+}
+.list__item span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.list__item span img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.intro__photo {
+  position: relative;
+  top: -75px;
+  padding: 35px;
+}
+.intro__photo img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.intro__button {
+  padding: 10px 30px;
+  margin-left: 30px;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(107, 107, 227)), to(rgb(211, 68, 68)));
+  background: linear-gradient(rgb(107, 107, 227), rgb(211, 68, 68));
+}
