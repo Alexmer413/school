@@ -218,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#efb7b5), to(#fff));
   background: linear-gradient(#efb7b5, #fff);
-  color: #3d405b;
+  color: #464969;
   font-family: montserrat, sans-serif;
 }
 
@@ -237,13 +237,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .intro__title {
-  font-size: 28px;
-  margin-bottom: 30px;
+  font-size: 30px;
+  margin-bottom: 45px;
   text-transform: uppercase;
   font-weight: 600;
 }
 .intro__title span {
   display: block;
+  display: none;
   padding-top: 10px;
   font-size: 22px;
   text-transform: capitalize;
@@ -301,6 +302,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro__photo {
   position: relative;
+  padding-top: 6px;
+  padding-left: 10px;
 }
 .intro__photo img {
   width: 100%;
@@ -322,7 +325,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro__button {
   padding: 10px 30px;
-  margin-left: 30px;
   border-radius: 5px;
   color: #fff;
   text-transform: uppercase;
