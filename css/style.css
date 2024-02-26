@@ -120,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav {
   height: 300px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: sans-serif;
   color: #fff;
   text-transform: uppercase;
@@ -164,6 +164,9 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   width: 100%;
   height: 100%;
+  padding: 15px 30px;
+  background-color: #c56d6a;
+  border-radius: 25px;
 }
 .nav__list li {
   margin-right: 35px;
@@ -178,7 +181,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav__link {
-  color: #3d405b;
+  color: #fff;
 }
 
 .video {
