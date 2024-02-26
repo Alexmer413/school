@@ -170,18 +170,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav__list li {
   margin-right: 35px;
+  position: relative;
 }
 .nav__list li:last-child {
   margin-right: 0px;
 }
-.nav__list li:hover {
-  text-decoration: underline;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+.nav__list li::after {
+  content: " ";
+  height: 3px;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  -webkit-transition: width 0.2s linear;
+  transition: width 0.2s linear;
+}
+.nav__list li:hover:after {
+  width: 100%;
 }
 
 .nav__link {
   color: #fff;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
 .video {
@@ -303,7 +315,7 @@ h1, h2, h3, h4, h5, h6 {
 .intro__photo {
   position: relative;
   padding-top: 6px;
-  padding-left: 10px;
+  padding-left: 25px;
 }
 .intro__photo img {
   width: 100%;
