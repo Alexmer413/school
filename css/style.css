@@ -345,10 +345,11 @@ h1, h2, h3, h4, h5, h6 {
 .intro__button {
   padding: 10px 30px;
   font-size: 19px;
+  font-weight: 500;
   border-radius: 5px;
   color: #ffffff;
-  background: -webkit-gradient(linear, left top, left bottom, from(#a17e25), to(#2c6051));
-  background: linear-gradient(#a17e25, #2c6051);
+  background: -webkit-gradient(linear, left top, right top, from(#a17e25), to(#408d77));
+  background: linear-gradient(to right, #a17e25, #408d77);
 }
 
 .mailus {
