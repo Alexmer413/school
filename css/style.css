@@ -253,6 +253,16 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 45px;
   text-transform: uppercase;
   font-weight: 600;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.intro__title._active {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
 .intro__title span {
   display: block;
@@ -262,16 +272,15 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
 }
 
-.list__item {
-  margin-bottom: 45px;
-}
-
 .list__item li {
   margin-bottom: 30px;
   position: relative;
   font-size: 19px;
   font-weight: 600;
   font-style: italic;
+}
+.list__item li:last-child {
+  margin-top: 45px;
 }
 .list__item li span {
   position: absolute;
@@ -315,6 +324,10 @@ h1, h2, h3, h4, h5, h6 {
 .list__item._active li:nth-child(4) {
   -webkit-transition: all 0.8s ease 0.6s;
   transition: all 0.8s ease 0.6s;
+}
+.list__item._active li:nth-child(5) {
+  -webkit-transition: all 0.8s ease 0.8s;
+  transition: all 0.8s ease 0.8s;
 }
 
 .intro__photo {
