@@ -1,0 +1,23 @@
+.map {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+
+.map__inner {
+  position: relative;
+  z-index: 10;
+  padding: 20px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 0.8s ease 0s;
+  transition: -webkit-transform 0.8s ease 0s;
+  transition: transform 0.8s ease 0s;
+  transition: transform 0.8s ease 0s, -webkit-transform 0.8s ease 0s;
+}
+.map__inner._active {
+  -webkit-transform: scale(1) rotate(360deg);
+          transform: scale(1) rotate(360deg);
+}
