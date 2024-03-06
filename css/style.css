@@ -72,53 +72,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  height: 70px;
-  font-size: 14px;
-  font-family: sans-serif;
-  display: none;
-}
-
-.header__container {
-  height: 100%;
-}
-
-.header__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.header__logo {
-  display: block;
-  height: 100%;
-}
-.header__logo img {
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.menu__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-.menu__list li {
-  margin-right: 30px;
-}
-.menu__list li:last-child {
-  margin-right: 0px;
-}
-
-.header-move {
   width: 100%;
   height: 70px;
   position: fixed;
@@ -133,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   visibility: hidden;
 }
-.header-move::after {
+.header::after {
   content: "";
   position: absolute;
   top: 0;
@@ -144,13 +97,13 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgb(28, 28, 40);
   opacity: 0.7;
 }
-.header-move._active {
+.header._active {
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
   opacity: 1;
   visibility: visible;
 }
-.header-move a {
+.header a {
   color: #ffffff;
   font-size: 12px;
   letter-spacing: 5px;
@@ -158,11 +111,11 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: color 0.2s linear;
   transition: color 0.2s linear;
 }
-.header-move a:hover {
-  color: #ffffff;
+.header a:hover {
+  color: #ece1e1;
 }
 
-.header-move__inner {
+.header__inner {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
           align-items: center;
 }
 
-.header-move__logo {
+.header__logo {
   height: 70px;
   width: 70px;
   border-radius: 50%;
@@ -184,23 +137,23 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 100;
   overflow: hidden;
 }
-.header-move__logo img {
+.header__logo img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.header-move__nav {
+.header__nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   z-index: 100;
 }
-.header-move__nav li {
+.header__nav li {
   margin-right: 40px;
 }
-.header-move__nav li:last-child {
+.header__nav li:last-child {
   margin-right: 0px;
 }
 
