@@ -2,6 +2,7 @@
 
 let animItems = document.querySelectorAll('._anim-items');
 let header = document.querySelector('.header');
+let headerMove = document.querySelector('.header-move');
 
 if (animItems.length > 0) {
     window.addEventListener('scroll', animOnScroll);
@@ -31,10 +32,10 @@ if (animItems.length > 0) {
 
         // const header = headerElement[0];
         if (window.scrollY > window.innerHeight) { //то есть если докрутили выше одного экрана 
-            header.classList.add('_active'); //  
+            headerMove.classList.add('_active'); //  
         }
         else {
-            header.classList.remove('_active');
+            headerMove.classList.remove('_active');
         }
         ///////////////////////////
 
