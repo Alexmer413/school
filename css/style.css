@@ -1063,6 +1063,18 @@ img.open {
   background-attachment: fixed;
   width: 100%;
 }
+.services.services-clean {
+  background: none;
+}
+
+.services__photo {
+  max-width: 100%;
+}
+.services__photo img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 .services__inner {
   display: -webkit-box;
@@ -1139,6 +1151,39 @@ img.open {
 .services__button:hover {
   background: -webkit-gradient(linear, left top, right top, from(#8b6d21), to(#34715f));
   background: linear-gradient(to right, #8b6d21, #34715f);
+}
+
+.services__list.services-clean__list li {
+  list-style: none;
+  position: relative;
+  -webkit-transform: translate(70%, 0px);
+          transform: translate(70%, 0px);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.services__list.services-clean__list._active li {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+.services__list.services-clean__list._active li:nth-child(1) {
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.services__list.services-clean__list._active li:nth-child(2) {
+  -webkit-transition: all 0.8s ease 0.2s;
+  transition: all 0.8s ease 0.2s;
+}
+.services__list.services-clean__list._active li:nth-child(3) {
+  -webkit-transition: all 0.8s ease 0.4s;
+  transition: all 0.8s ease 0.4s;
+}
+.services__list.services-clean__list._active li:nth-child(4) {
+  -webkit-transition: all 0.8s ease 0.6s;
+  transition: all 0.8s ease 0.6s;
+}
+.services__list.services-clean__list._active li:nth-child(5) {
+  -webkit-transition: all 0.8s ease 0.8s;
+  transition: all 0.8s ease 0.8s;
 }
 
 body {
