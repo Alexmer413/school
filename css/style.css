@@ -165,12 +165,11 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-family: montserrat, sans-serif;
   font-weight: 600;
-  background-color: #f0b8b7;
+  background-color: #b7caf1;
 }
 
 .nav__container {
   height: 100%;
-  padding: 0px 30px;
 }
 
 .nav__inner {
@@ -203,8 +202,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   width: 100%;
   height: 100%;
-  padding: 15px 30px;
-  background-color: #c56d6a;
+  padding: 15px 0px;
   border-radius: 25px;
 }
 .nav__list li {
@@ -267,8 +265,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro {
   width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f0b8b7), to(#ffffff));
-  background: linear-gradient(#f0b8b7, #ffffff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#b7caf1), to(#ffffff));
+  background: linear-gradient(#b7caf1, #ffffff);
   color: #464969;
   font-family: montserrat, sans-serif;
 }
@@ -336,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
      object-fit: cover;
 }
 
-.intro__list li, .info__list li {
+.intro__list li, .info__list li, .services__list li {
   list-style: none;
   position: relative;
   -webkit-transform: translate(-120%, 0px);
@@ -344,27 +342,27 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-.intro__list._active li, .info__list._active li {
+.intro__list._active li, .info__list._active li, .services__list._active li {
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
 }
-.intro__list._active li:nth-child(1), .info__list._active li:nth-child(1) {
+.intro__list._active li:nth-child(1), .info__list._active li:nth-child(1), .services__list._active li:nth-child(1) {
   -webkit-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
 }
-.intro__list._active li:nth-child(2), .info__list._active li:nth-child(2) {
+.intro__list._active li:nth-child(2), .info__list._active li:nth-child(2), .services__list._active li:nth-child(2) {
   -webkit-transition: all 0.8s ease 0.2s;
   transition: all 0.8s ease 0.2s;
 }
-.intro__list._active li:nth-child(3), .info__list._active li:nth-child(3) {
+.intro__list._active li:nth-child(3), .info__list._active li:nth-child(3), .services__list._active li:nth-child(3) {
   -webkit-transition: all 0.8s ease 0.4s;
   transition: all 0.8s ease 0.4s;
 }
-.intro__list._active li:nth-child(4), .info__list._active li:nth-child(4) {
+.intro__list._active li:nth-child(4), .info__list._active li:nth-child(4), .services__list._active li:nth-child(4) {
   -webkit-transition: all 0.8s ease 0.6s;
   transition: all 0.8s ease 0.6s;
 }
-.intro__list._active li:nth-child(5), .info__list._active li:nth-child(5) {
+.intro__list._active li:nth-child(5), .info__list._active li:nth-child(5), .services__list._active li:nth-child(5) {
   -webkit-transition: all 0.8s ease 0.8s;
   transition: all 0.8s ease 0.8s;
 }
@@ -400,12 +398,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   border-radius: 5px;
   color: #ffffff;
-  background: -webkit-gradient(linear, left top, right top, from(#a17e25), to(#408d77));
-  background: linear-gradient(to right, #a17e25, #408d77);
+  background: -webkit-gradient(linear, left top, right top, from(#bbb42d), to(#d1d129));
+  background: linear-gradient(to right, #bbb42d, #d1d129);
 }
 .intro__button:hover {
-  background: -webkit-gradient(linear, left top, right top, from(#8b6d21), to(#34715f));
-  background: linear-gradient(to right, #8b6d21, #34715f);
+  background: -webkit-gradient(linear, left top, right top, from(#a6a031), to(#b1ba49));
+  background: linear-gradient(to right, #a6a031, #b1ba49);
 }
 
 .mailus {
@@ -858,12 +856,14 @@ img.open {
 
 .photos {
   width: 100%;
-  padding: 40px 0px 100px;
+  padding: 170px 0px 100px;
 }
 
 /*-----fancybox-----*/
 .fancybox {
   width: 100%;
+  -webkit-box-shadow: 0px 0px 15px #1e1c2b;
+          box-shadow: 0px 0px 15px #1e1c2b;
 }
 
 .fancybox__inner {
@@ -943,8 +943,9 @@ img.open {
   color: #665da3;
   position: relative;
   padding-bottom: 10px;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
+  text-transform: uppercase;
 }
 .photos__link::after {
   position: absolute;
@@ -998,7 +999,7 @@ img.open {
   font-family: sans-serif;
   font-weight: 400;
   letter-spacing: 1.5px;
-  background-color: #7067a5;
+  background-color: #b7caf1;
 }
 .footer__inner.footer-article {
   border-top: none;
@@ -1054,12 +1055,102 @@ img.open {
   margin-right: 10px;
 }
 
+.services {
+  height: 700px;
+  padding: 100px 0px;
+  width: 100%;
+  background: url(../../img/11.jpg) center no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.services__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 100px;
+}
+
+.services__item {
+  max-width: 50%;
+}
+
+.services__title {
+  font-size: 30px;
+  margin-bottom: 45px;
+  text-transform: uppercase;
+  font-weight: 600;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.services__title._active {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+.services__title span {
+  display: block;
+  display: none;
+  padding-top: 10px;
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+.services__list li {
+  margin-bottom: 40px;
+  position: relative;
+  font-size: 19px;
+  font-weight: 600;
+  font-style: italic;
+}
+.services__list li:last-child {
+  margin-top: 45px;
+}
+.services__list li span {
+  position: absolute;
+  top: 0;
+  left: -30px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.services__list li span img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.services__button {
+  padding: 10px 30px;
+  font-size: 19px;
+  font-weight: 500;
+  border-radius: 5px;
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, right top, from(#a17e25), to(#408d77));
+  background: linear-gradient(to right, #a17e25, #408d77);
+}
+.services__button:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#8b6d21), to(#34715f));
+  background: linear-gradient(to right, #8b6d21, #34715f);
+}
+
 body {
   font-size: 18px;
   font-family: montserrat, sans-serif;
   /*&.lock{
       overflow: hidden;
   }*/
+}
+
+.wrapper {
+  position: relative;
 }
 
 .container {
