@@ -1059,7 +1059,7 @@ img.open {
   height: 700px;
   max-width: 100vw;
   padding: 100px 0px;
-  background: url(../img/20.jpeg) center cover no-repeat;
+  background: url(../img/20.jpeg) center no-repeat;
   background-attachment: fixed;
 }
 .services.services-clean {
