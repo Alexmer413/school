@@ -1060,7 +1060,6 @@ img.open {
   padding: 100px 0px;
   width: 100%;
   background: url(../../img/20.jpeg) center no-repeat;
-  background-attachment: fixed;
   width: 100%;
 }
 .services.services-clean {
