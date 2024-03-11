@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:wght@400;500;700&display=swap");
 * {
   padding: 0;
@@ -992,6 +993,7 @@ img.open {
 }
 /*----footer----*/
 .footer__inner {
+  position: relative;
   padding: 35px 0px;
   text-align: center;
   line-height: 1.5;
@@ -1053,6 +1055,26 @@ img.open {
 
 .e-mail {
   margin-right: 10px;
+}
+
+.go-top {
+  cursor: pointer; /* при наведении меняем курсор */
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  font-size: 20px;
+  color: rgba(14, 46, 104, 0.7);
+  padding: 15px 10px;
+}
+
+/* меняем прозрачность при наведении мышкой */
+.go-top:hover {
+  color: rgba(1, 46, 102, 0.8);
+}
+
+/* модификатор для отображения кнопки */
+.go-top--show {
+  display: block;
 }
 
 .services {
