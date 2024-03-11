@@ -1058,8 +1058,10 @@ img.open {
 .services {
   height: 700px;
   max-width: 100vw;
-  padding: 100px 0px;
+  padding: 130px 0px;
   background: url(../img/20.jpeg) center no-repeat;
+  background-size: 100%;
+  color: #464969;
   background-attachment: fixed;
 }
 .services.services-clean {
