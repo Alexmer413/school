@@ -1,0 +1,9 @@
+.price__inner {
+  padding: 20px;
+}
+
+.price__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

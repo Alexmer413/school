@@ -179,31 +179,194 @@ function bodyUnLock() {
 // считываем кнопку
 const goTopBtn = document.querySelector(".go-top");
 
-// обработчик на скролл окна
-window.addEventListener("scroll", trackScroll);
 // обработчик на нажатии
 goTopBtn.addEventListener("click", goTop);
 
-function trackScroll() {
-  // вычисляем положение от верхушки страницы
-  const scrolled = window.pageYOffset;
-  // считаем высоту окна браузера
-  const coords = document.documentElement.clientHeight;
-  // если вышли за пределы первого окна
-  if (scrolled > coords) {
-    // кнопка появляется
-    goTopBtn.classList.add("go-top--show");
-  } else {
-    // иначе исчезает
-    goTopBtn.classList.remove("go-top--show");
-  }
+function goTop() {
+    // пока не вернулись в начало страницы
+    if (window.pageYOffset > 0) {
+        // скроллим наверх
+        window.scrollBy(0, -30); // второй аргумент - скорость
+        setTimeout(goTop, 0); // входим в рекурсию
+    }
 }
 
-function goTop() {
-  // пока не вернулись в начало страницы
-  if (window.pageYOffset > 0) {
-    // скроллим наверх
-    window.scrollBy(0, -55); // второй аргумент - скорость
-    setTimeout(goTop, 0); // входим в рекурсию
-  }
+
+
+/*--------переходы к разделам---------*/
+
+const navLinks = document.querySelectorAll('.nav__link[data-goto]');
+//console.log(navLinks);
+if (navLinks.length > 0) {
+    navLinks.forEach(navLink => {
+        navLink.addEventListener("click", onMemuLinkClick);
+    });
+    function onMemuLinkClick(e) {
+
+        const navLink = e.target;
+        if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) {
+            const gotoBlock = document.querySelector(navLink.dataset.goto);
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
+
+            /*    if (burger.classList.contains('_active')) {
+                    burger.classList.remove('_active');
+                    nav.classList.remove('_active');
+                    document.body.classList.remove('_lock');
+                    window.scrollTo({
+                        top: gotoBlockValue,
+                        behavior: "auto"
+                    });
+                }*/
+
+            window.scrollTo({
+                top: gotoBlockValue,
+                // behavior: "smooth"
+                behavior: 'auto'
+            });
+
+            e.preventDefault();
+        }
+    }
 }
+
+
+
+
+/*========popup_js========*/
+
+
+const popupLinks = document.querySelectorAll('.popup-link');
+const body = document.querySelector('body');
+const lockPadding = document.querySelectorAll('.lock-padding');//добавляем этот класс общему объекту body и к фиксированным объектам, так как они к body не привязаны, и будут сдвигаться
+
+let unlock = true;
+const timeOut = 600; //чтобы пока открывается окно заблокировать вторичное нажатие на окна
+
+if (popupLinks.length > 0) {
+    for (let index = 0; index < popupLinks.length; index++) {
+        const popupLink = popupLinks[index];
+        popupLink.addEventListener("click", function (e) {
+            const popupName = popupLink.getAttribute('href').replace('#', '');
+            const currentPopup = document.getElementById(popupName);
+            popupOpen(currentPopup);
+            e.prevrntDefault(); //запрещает ссылке перезагружать страницу
+        });                     //то есть поскольку мы нажали на ссылку, а открываем окно сами через JS
+        //то мы блокируем работы ссылки по умолчанию
+    }
+}
+
+const popupCloseIcon = document.querySelectorAll('.popup_js-close');
+if (popupCloseIcon.length > 0) {
+    for (let index = 0; index < popupCloseIcon.length; index++) {
+        const el = popupCloseIcon[index];
+        el.addEventListener('click', function (e) {
+            popupClose(el.closest('.popup_js'));//ищет ближайшего родителя нашего крестика с классом popup, наш закрывашка находится внутри своего окна, которое надо закрыть
+            e.preventDefault();
+        });
+    }
+}
+
+function popupOpen(currentPopup) {
+    if (currentPopup && unlock) {
+        const popupActive = document.querySelector('.popup_js.open');
+      //  if (popupActive) {   //убрал это чтобы при открытии второго окна первое не закрывалось так как нам нужно возвращаться на него
+      //      popupClose(popupActive, false);
+      //  } else {
+            bodyLock(); //скрывает скролл
+      //  }
+        currentPopup.classList.add('open');
+        currentPopup.addEventListener("click", function (e) {
+            if (!e.target.closest('.popup_js__content')) {
+                popupClose(e.target.closest('.popup_js'));
+            }
+        });
+    }
+}
+
+function popupClose(popupActive, doUnlock = true) {
+    if (unlock) {
+
+        popupActive.classList.remove('open');
+
+        if (doUnlock && !document.querySelector('.popup_js.open')) { //добавил в проверку правую часть чтобы не возвращять скролл если открыто ещё какое-то окно
+            bodyUnLock();
+        }
+    }
+}
+
+function bodyLock() {
+    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+
+    if (lockPadding.length > 0) {
+        for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = lockPaddingValue;
+        }
+    }
+    body.style.paddingRight = lockPaddingValue;
+    body.classList.add('lock');
+
+    unlock = false;
+    setTimeout(function () {
+        unlock = true;
+    }, timeOut);
+}
+
+function bodyUnLock() {
+    setTimeout(function () {
+        if (lockPadding.length > 0) {
+            for (let index = 0; index < lockPadding.length; index++) {
+                const el = lockPadding[index];
+                el.style.paddingRight = '0px';
+            }
+        }
+        body.style.paddingRight = '0px';
+        body.classList.remove('lock');
+    }, timeOut); //чтобы скролл появлялся только после закрытия окна а не сразу после нажатия
+
+    unlock = false; //блокируем возможность повторного открытия окна пока окно закрывается
+    setTimeout(function () {
+        unlock = true;
+    }, timeOut);
+}
+
+document.addEventListener('keydown', function (e) {
+    if (e.which === 27) {
+        const popupActive = document.querySelector('.popup_js.open');
+        popupClose(popupActive);
+    }
+});
+
+//дальше идут полифилы для свойств closest и matches
+//так как свойства новые, то, чтобы старый браузер понимал, что с ними делать
+//мы добавляем блок кода который ему расшифровывает на понятном языке
+
+(function () {
+    if (!Element.prototype.closest) {//если нет прототипа для этого свойства
+        Element.prototype.closest = function (css) {
+            var node = this;
+            while (node) {
+                if (node.matches(css)) return node;
+                else node = node.parentElement;
+            }
+            return null;
+        };
+    }
+})();
+
+(function () {
+    if (!Element.prototype.matches) {
+        Element.prototype.matches = Element.prototype.matchesSelector ||
+            Element.prototype.webkitMatchesSelector ||
+            Element.prototype.mozMatchesSelector ||
+            Element.prototype.msMatchesSelector
+    }
+})();
+
+
+
+//всплывающее окно через 5 секунд после того как дойдет до этого кода обработчик
+//а можно поидее от времени загрузки отсчитать
+/*setTimeout(function(){ 
+    document.getElementById("timer-open").click();
+}, 5000);*/

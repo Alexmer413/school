@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/*=======Второе модальное окно=======*/
+.popup_js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.popup_js.open {
+  opacity: 1;
+  visibility: visible;
+}
+.popup_js.open .popup_js__content {
+  -webkit-transform: perspective(600px) translate(0px, 0px) rotatex(0deg);
+          transform: perspective(600px) translate(0px, 0px) rotatex(0deg);
+  opacity: 1;
+}
+
+.popup_js__body {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup_js__content {
+  background-color: #fff;
+  color: #000;
+  max-width: 800px;
+  padding: 30px;
+  font-size: 20px;
+  position: relative;
+  -webkit-transform: perspective(600px) translate(0px, -100%) rotatex(45deg);
+          transform: perspective(600px) translate(0px, -100%) rotatex(45deg);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.popup_js__content-img {
+  max-width: 400px;
+  padding: 0px;
+}
+
+.popup_js-close {
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  color: #000;
+}
+
+.popup_js__title {
+  font-size: 40px;
+  margin-bottom: 1em;
+}
+
+.popup_js__text {
+  line-height: 1.5;
+}
