@@ -95,83 +95,7 @@ Fancybox.bind('[data-fancybox="single"]', {
 
 
 
-/*========LOCK_PADDING========*/
 
-/*const fancyLinks = document.querySelectorAll('.fancybox__item');
-const body = document.querySelector('body');
-
-const lockPadding = document.querySelectorAll('.lock-padding');//добавляем этот класс общему объекту body и к фиксированным объектам, так как они к body не привязаны, и будут сдвигаться
-
-let unlock = true;
-const timeOut = 800;
-
-if (fancyLinks.length > 0) {
-    for (let index = 0; index < fancyLinks.length; index++) {
-        const fancyLink = fancyLinks[index];
-        fancyLink.addEventListener("click", function (e) {
-
-            bodyLock();
-            // e.preventDefault(); //запрещает ссылке перезагружать страницу
-        });                     
-    }
-}
-
-
-const fancyCloseIcon = document.querySelectorAll('[title = "close"]');
-if (fancyCloseIcon.length > 0) {
-
-    for (let index = 0; index < fancyCloseIcon.length; index++) {
-        const el = fancyCloseIcon[index];
-        el.addEventListener('click', function (e) {
-
-            bodyUnLock();
-            // e.preventDefault();
-        });
-    }
-}
-
-
-function fancyClose(fancyActive, doUnlock = true) {
-    if (unlock) {
-        fancyActive.classList.remove('open');
-        if (doUnlock) {
-            bodyUnLock();
-        }
-    }
-}
-
-function bodyLock() {
-    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
-
-    if (lockPadding.length > 0) {
-        for (let index = 0; index < lockPadding.length; index++) {
-            const el = lockPadding[index];
-            el.style.paddingRight = lockPaddingValue;
-        }
-    }
-    body.classList.add('lock');
-    unlock = false;
-    setTimeout(function () {
-        unlock = true;
-    }, timeOut);
-}
-
-function bodyUnLock() {
-    setTimeout(function () {
-        if (lockPadding.length > 0) {
-            for (let index = 0; index < lockPadding.length; index++) {
-                const el = lockPadding[index];
-                el.style.paddingRight = '0px';
-            }
-        }
-        
-    }, timeOut); 
-    body.classList.remove('lock');
-    unlock = false; //блокируем возможность повторного открытия окна пока окно закрывается
-    setTimeout(function () {
-        unlock = true;
-    }, timeOut);
-}*/
 
 
 /* КНОПКА НАВЕРХ*/
@@ -268,12 +192,24 @@ if (popupCloseIcon.length > 0) {
 
 function popupOpen(currentPopup) {
     if (currentPopup && unlock) {
-        const popupActive = document.querySelector('.popup_js.open');
-      //  if (popupActive) {   //убрал это чтобы при открытии второго окна первое не закрывалось так как нам нужно возвращаться на него
-      //      popupClose(popupActive, false);
-      //  } else {
+        
+        if (!currentPopup.classList.contains("popup-double")){
+            const popupActive = document.querySelector('.popup_js.open');
+              if (popupActive) {   //убрал это чтобы при открытии второго окна первое не закрывалось так как нам нужно возвращаться на него
+                  popupClose(popupActive, false);
+              } else {
             bodyLock(); //скрывает скролл
-      //  }
+              }
+        }
+        else{
+            bodyLock(); //скрывает скролл
+        }
+        
+        //  if (popupActive) {   //убрал это чтобы при открытии второго окна первое не закрывалось так как нам нужно возвращаться на него
+        //      popupClose(popupActive, false);
+        //  } else {
+      //  bodyLock(); //скрывает скролл
+        //  }
         currentPopup.classList.add('open');
         currentPopup.addEventListener("click", function (e) {
             if (!e.target.closest('.popup_js__content')) {
