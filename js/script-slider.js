@@ -66,11 +66,11 @@ let mainSlider = new Swiper('.main-slider', {
     //навигация
     //буллеты, текущее положение, прогресс бар
 
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-    },
+    //pagination: {
+    //    el: '.swiper-pagination',
+    //    clickable: true,
+    //    dynamicBullets: true,
+   // },
      //autoHeight: true,
      slidesPerView: 1, //можно не целые числа, например 2.5
 	 spaceBetween: 8, // отступы между слайдами
