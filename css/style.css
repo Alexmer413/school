@@ -306,6 +306,11 @@ h1, h2, h3, h4, h5, h6 {
         font-family: 'Gagalin-Regular' ;
         src: url(../fonts/Gagalin-Regular.otf);
     }*/
+  /* @font-face {
+       font-family: 'Gagalin-Regular' ;
+       src: url(../../fonts/Gagalin-Regular.otf);
+       font-weight: 400;
+   }*/
 }
 .nav--content__title span {
   display: block;
@@ -317,11 +322,6 @@ h1, h2, h3, h4, h5, h6 {
 .nav--content__title.intro__title {
   font-size: 28px;
   color: #034656;
-}
-@font-face {
-  font-family: "Gagalin-Regular";
-  src: url(../../fonts/Gagalin-Regular.otf);
-  font-weight: 400;
 }
 
 .nav--content__list li {
@@ -386,6 +386,14 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(to right, #a6a031, #b1ba49);
 }
 
+@font-face {
+  font-family: "Gagalin-Regular";
+  src: url(../../fonts/Gagalin-Regular.otf);
+}
+@font-face {
+  font-family: "Gagalin-Regular";
+  src: url(../fonts/Gagalin-Regular.otf);
+}
 .intro {
   width: 100%;
   height: 100%;
