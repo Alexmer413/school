@@ -303,14 +303,14 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   color: #0c5a6d;
   /*  @font-face {
-        font-family: 'Gagalin-Regular' ;
-        src: url(../fonts/Gagalin-Regular.otf);
-    }*/
+      font-family: 'Gagalin-Regular' ;
+      src: url(../fonts/Gagalin-Regular.otf);
+  }*/
   /* @font-face {
-       font-family: 'Gagalin-Regular' ;
-       src: url(../../fonts/Gagalin-Regular.otf);
-       font-weight: 400;
-   }*/
+      font-family: 'Gagalin-Regular' ;
+      src: url(../../fonts/Gagalin-Regular.otf);
+      font-weight: 400;
+  }*/
 }
 .nav--content__title span {
   display: block;
@@ -373,17 +373,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav--content__button {
+  margin-top: 10px;
   padding: 10px 30px;
   font-size: 19px;
   font-weight: 500;
   border-radius: 5px;
   color: #ffffff;
-  background: -webkit-gradient(linear, left top, right top, from(#bbb42d), to(#d1d129));
-  background: linear-gradient(to right, #bbb42d, #d1d129);
+  background: -webkit-gradient(linear, left top, right top, from(#345cb1), to(#358cd8));
+  background: linear-gradient(to right, #345cb1, #358cd8);
 }
 .nav--content__button:hover {
-  background: -webkit-gradient(linear, left top, right top, from(#a6a031), to(#b1ba49));
-  background: linear-gradient(to right, #a6a031, #b1ba49);
+  background: -webkit-gradient(linear, left top, right top, from(#456ec7), to(#4398e2));
+  background: linear-gradient(to right, #456ec7, #4398e2);
+}
+
+.anim-button {
+  position: relative;
+  overflow: hidden;
+}
+.anim-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 45px;
+  -webkit-transform: skewX(-45deg);
+          transform: skewX(-45deg);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  -webkit-transition: -webkit-transform 1s linear;
+  transition: -webkit-transform 1s linear;
+  transition: transform 1s linear;
+  transition: transform 1s linear, -webkit-transform 1s linear;
+}
+.anim-button._active::before {
+  -webkit-transform: translateX(1300%);
+          transform: translateX(1300%);
 }
 
 @font-face {
@@ -399,6 +425,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   color: #034656;
   position: relative;
+  padding-top: 50px;
 }
 
 .fade-color {
@@ -582,12 +609,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   border-radius: 5px;
   color: #ffffff;
-  background: -webkit-gradient(linear, left top, right top, from(#bbb42d), to(#d1d129));
-  background: linear-gradient(to right, #bbb42d, #d1d129);
+  background: -webkit-gradient(linear, left top, right top, from(#345cb1), to(#358cd8));
+  background: linear-gradient(to right, #345cb1, #358cd8);
 }
 .intro__button:hover {
-  background: -webkit-gradient(linear, left top, right top, from(#a6a031), to(#b1ba49));
-  background: linear-gradient(to right, #a6a031, #b1ba49);
+  background: -webkit-gradient(linear, left top, right top, from(#456ec7), to(#4398e2));
+  background: linear-gradient(to right, #456ec7, #4398e2);
 }
 
 .mailus {
@@ -898,18 +925,18 @@ img.open {
 }
 
 .teachers__title {
-  text-transform: uppercase;
+  font-family: "Gagalin-Regular";
   font-size: 38px;
-  color: #ae7d3c;
-  text-align: center;
-  margin-bottom: 35px;
   font-weight: 600;
+  color: #034656;
+  padding-top: 20px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
 }
 
 .teachers__subtitle {
   font-size: 18px;
   color: #464969;
-  text-align: center;
   margin-bottom: 90px;
   font-weight: 400;
 }
@@ -1063,12 +1090,15 @@ img.open {
 }
 
 .photos__title {
-  text-transform: uppercase;
+  font-family: "Gagalin-Regular";
   font-size: 38px;
-  color: #ae7d3c;
-  text-align: center;
-  margin-bottom: 40px;
   font-weight: 600;
+  color: #034656;
+  padding-top: 20px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 /*-----fancybox-----*/
@@ -1718,7 +1748,7 @@ img.open {
 }
 
 .popup__news__photo {
-  width: 60%;
+  width: 50%;
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -1729,6 +1759,23 @@ img.open {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.first-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.popup__news__text {
+  width: 50%;
+  padding: 0px 15px;
+}
+
+.popup__news__info-subtitle {
+  padding: 15px 0px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 *,
