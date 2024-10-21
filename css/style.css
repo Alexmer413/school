@@ -947,6 +947,9 @@ img.open {
           justify-content: space-between;
   position: relative;
 }
+.teachers__items a {
+  color: #000;
+}
 
 .teachers__item-director {
   -webkit-box-flex: 0;
@@ -990,25 +993,25 @@ img.open {
   background-color: gold;
 }
 .teachers__item:nth-child(2) .teachers__text {
-  background-color: coral;
+  background-color: #b37975;
 }
 .teachers__item:nth-child(3) .teachers__text {
-  background-color: mediumseagreen;
+  background-color: #5ca185;
 }
 .teachers__item:nth-child(4) .teachers__text {
   background-color: aqua;
 }
 .teachers__item:nth-child(5) .teachers__text {
-  background-color: mediumseagreen;
+  background-color: #5ca185;
 }
 .teachers__item:nth-child(6) .teachers__text {
   background-color: aqua;
 }
 .teachers__item:nth-child(7) .teachers__text {
-  background-color: coral;
+  background-color: #b37975;
 }
 .teachers__item:nth-child(8) .teachers__text {
-  background-color: gold;
+  background-color: #5ca185;
 }
 
 .teachers__item-personal {
@@ -1062,6 +1065,10 @@ img.open {
   right: -25px;
   width: 170px;
   height: auto;
+  scale: 0;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0.5s;
+  transition: all 0.5s ease 0.5s;
 }
 
 .cloud__text {
@@ -1091,7 +1098,7 @@ img.open {
   text-align: center;
   font-weight: 600;
   border-radius: 25px;
-  background-color: coral;
+  background-color: #b37975;
 }
 
 .teachers__name {
@@ -1111,6 +1118,16 @@ img.open {
 .teachers__item._active .teachers__image:hover img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.teachers__item-main._active .cloud {
+  scale: 1;
+  opacity: 1;
+}
+
+.teachers__item._active .cloud {
+  scale: 1;
+  opacity: 1;
 }
 
 .teachers__item-main._active .teachers__image {
@@ -1206,7 +1223,7 @@ img.open {
   text-transform: uppercase;
   margin-bottom: 40px;
   margin-bottom: 50px;
-  text-align: center;
+  text-align: left;
 }
 
 /*-----fancybox-----*/
@@ -1672,7 +1689,7 @@ img.open {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 100;
+  z-index: 150;
   color: #fff;
   opacity: 0;
   visibility: hidden;
@@ -1684,15 +1701,22 @@ img.open {
   visibility: visible;
 }
 .popup_js.open .popup_js__content {
+  -webkit-transform: translate(0px, 35px);
+          transform: translate(0px, 35px);
   opacity: 1;
+}
+.popup_js.open .popup_js__content.teachers__content {
+  scale: 1;
+  -webkit-transform: translateY(35px);
+          transform: translateY(35px);
 }
 .popup_js.open.popup__js-news {
   opacity: 1;
   visibility: visible;
 }
 .popup_js.open.popup__js-news .popup_js__content {
-  -webkit-transform: perspective(600px) translate(0px, 0px) rotatex(0deg);
-          transform: perspective(600px) translate(0px, 0px) rotatex(0deg);
+  -webkit-transform: perspective(600px) translate(0px, 35px) rotatex(0deg);
+          transform: perspective(600px) translate(0px, 35px) rotatex(0deg);
   opacity: 1;
 }
 
@@ -1711,7 +1735,7 @@ img.open {
 
 .popup_js__content {
   max-width: 950px;
-  height: 670px;
+  height: 600px;
   border-radius: 15px;
   background-color: #fff;
   color: #000;
@@ -1724,6 +1748,11 @@ img.open {
 .popup__js-news .popup_js__content {
   -webkit-transform: perspective(600px) translate(0px, -100%) rotatex(45deg);
           transform: perspective(600px) translate(0px, -100%) rotatex(45deg);
+}
+.popup_js__content.teachers__content {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  scale: 0.5;
 }
 
 .popup_js__content-inner {
@@ -1883,6 +1912,34 @@ img.open {
 .popup__news__info-subtitle {
   padding: 15px 0px;
   font-size: 16px;
+  font-weight: 600;
+}
+
+/*------TEACHERS-------*/
+.teachers__content {
+  width: 550px;
+  height: 550px;
+  border-radius: 0px;
+  padding: 40px;
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+  position: relative;
+}
+.teachers__content .popup_js-close {
+  top: 5px;
+}
+
+.teachers__content-info {
+  font-size: 16px;
+}
+.teachers__content-info p {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.teachers__content-info-title {
+  font-size: 18px;
   font-weight: 600;
 }
 
