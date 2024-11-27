@@ -1,5 +1,17 @@
 //"use strict"
 
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav__list');
+if (burger) {
+    burger.addEventListener("click", function (e) {
+        burger.classList.toggle('_active');
+        nav.classList.toggle('_active');
+        document.body.classList.toggle('_lock');
+    });
+}
+
+
+
 let animItems = document.querySelectorAll('._anim-items');
 let header = document.querySelector('.header');
 
@@ -240,7 +252,7 @@ function bodyLock() {
         }
     }
     body.style.paddingRight = lockPaddingValue;
-    body.classList.add('lock');
+    body.classList.add('_lock');
 
     unlock = false;
     setTimeout(function () {
@@ -257,7 +269,7 @@ function bodyUnLock() {
             }
         }
         body.style.paddingRight = '0px';
-        body.classList.remove('lock');
+        body.classList.remove('_lock');
     }, timeOut); //чтобы скролл появлялся только после закрытия окна а не сразу после нажатия
 
     unlock = false; //блокируем возможность повторного открытия окна пока окно закрывается

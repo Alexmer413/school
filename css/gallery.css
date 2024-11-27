@@ -1,0 +1,139 @@
+.gallery {
+  height: 700px;
+  width: 100vw;
+  background-color: #74b9a4;
+}
+
+.gallery__inner {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 70px;
+}
+
+.gallery__item {
+  height: 100%;
+}
+.gallery__item-left {
+  width: 45%;
+}
+.gallery__item-right {
+  width: 55%;
+}
+
+.gallery__item-left {
+  padding-right: 45px;
+}
+
+.gallery__item-right {
+  position: relative;
+}
+
+.gallery__text {
+  margin-top: 55px;
+}
+
+.gallery__title {
+  font-size: 22px;
+  line-height: 1.5;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.gallery__title._active {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+/*  .elem {
+        width: 50%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        font-family: 'Roca-Regular';
+        font-size: 24px;
+        font-weight: 700;
+
+    }*/
+.free-unit {
+  height: 50%;
+  width: 100%;
+  font-family: "Roca-Regular";
+}
+.free-unit-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.free-unit-2 {
+  background-color: #ffffff;
+  border-radius: 35px;
+  padding: 50px;
+  font-size: 15px;
+}
+.free-circle {
+  width: 280px;
+  height: 100%;
+  background-color: #ffd873;
+  border-radius: 140px;
+  width: 280px;
+}
+
+.free-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.free-photo img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.free-title {
+  font-size: 15px;
+  color: #535353;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.free-subtitle {
+  font-size: 24px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.free-text {
+  margin-bottom: 20px;
+}
+
+.gallery__button {
+  padding: 15px 35px;
+  font-size: 16px;
+  border-radius: 30px;
+  line-height: 1;
+  display: inline-block;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#ffd873), to(#fce098));
+  background: linear-gradient(to right, #ffd873, #fce098);
+}
+.gallery__button:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#ffd873), to(#fce7b3));
+  background: linear-gradient(to right, #ffd873, #fce7b3);
+}
