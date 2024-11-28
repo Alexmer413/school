@@ -39,18 +39,46 @@ if (animItems.length > 0) {
             }
         }
 
-        //моя часть для появления header
+        //моя часть для появления header при прокрутке до 2 окна
 
         // const header = headerElement[0];
-        if (window.scrollY > window.innerHeight) { //то есть если докрутили выше одного экрана 
-            header.classList.add('_active'); //  
-        }
-        else {
-            header.classList.remove('_active');
-        }
+        /*  if (window.scrollY > window.innerHeight) { //то есть если докрутили выше одного экрана 
+              header.classList.add('_active'); //  
+          }
+          else {
+              header.classList.remove('_active');
+          }*/
+
         ///////////////////////////
 
     }
+
+
+    //поыление шапки при прокрутке вверх
+    let lastScroll = 0;
+    // const defaultOffset = 200;
+
+    const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
+    const containActive = () => header.classList.contains('_active');
+    //  let scrollValue = scrollPosition - lastScroll;
+
+    window.addEventListener('scroll', () => {
+
+        if (scrollPosition() < lastScroll && !containActive() && window.scrollY > window.innerHeight) {
+            //scroll down
+            header.classList.add('_active');
+
+        }
+        else if (scrollPosition() > lastScroll && containActive() || window.scrollY < window.innerHeight) {
+            //scroll up
+            header.classList.remove('_active');
+        }
+
+        lastScroll = scrollPosition();
+    })
+
+
+
 
 
     function offset(el) { //функция для вычисления координат элемента
@@ -142,7 +170,7 @@ if (navLinks.length > 0) {
         const navLink = e.target;
         if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) {
             const gotoBlock = document.querySelector(navLink.dataset.goto);
-            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY ; //- document.querySelector('header').offsetHeight
 
             /*    if (burger.classList.contains('_active')) {
                     burger.classList.remove('_active');
@@ -204,23 +232,23 @@ if (popupCloseIcon.length > 0) {
 
 function popupOpen(currentPopup) {
     if (currentPopup && unlock) {
-        
-        if (!currentPopup.classList.contains("popup-double")){
+
+        if (!currentPopup.classList.contains("popup-double")) {
             const popupActive = document.querySelector('.popup_js.open');
-              if (popupActive) {   //убрал это чтобы при открытии второго окна первое не закрывалось так как нам нужно возвращаться на него
-                  popupClose(popupActive, false);
-              } else {
-            bodyLock(); //скрывает скролл
-              }
+            if (popupActive) {   //убрал это чтобы при открытии второго окна первое не закрывалось так как нам нужно возвращаться на него
+                popupClose(popupActive, false);
+            } else {
+                bodyLock(); //скрывает скролл
+            }
         }
-        else{
+        else {
             bodyLock(); //скрывает скролл
         }
-        
+
         //  if (popupActive) {   //убрал это чтобы при открытии второго окна первое не закрывалось так как нам нужно возвращаться на него
         //      popupClose(popupActive, false);
         //  } else {
-      //  bodyLock(); //скрывает скролл
+        //  bodyLock(); //скрывает скролл
         //  }
         currentPopup.classList.add('open');
         currentPopup.addEventListener("click", function (e) {
@@ -243,8 +271,8 @@ function popupClose(popupActive, doUnlock = true) {
 }
 
 function bodyLock() {
-    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth -0.5 + 'px'; //вот эти -0.5 как-то корректируют величину 
-                                                                                                        //   добавляемого пэддинга, видимо он округляется что-ли на каком-то этапе
+    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth - 0.5 + 'px'; //вот эти -0.5 как-то корректируют величину 
+    //   добавляемого пэддинга, видимо он округляется что-ли на каком-то этапе
     if (lockPadding.length > 0) {                                                                       //и картинка смещалась, а так, нет                                       
         for (let index = 0; index < lockPadding.length; index++) {
             const el = lockPadding[index];

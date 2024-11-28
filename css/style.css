@@ -80,18 +80,12 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   text-transform: uppercase;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-  -webkit-transition: visibility 0.3s ease-in-out;
-  transition: visibility 0.3s ease-in-out;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   -webkit-transform: translate(0px, -100%);
           transform: translate(0px, -100%);
-  opacity: 0;
-  visibility: hidden;
 }
 .header::after {
   content: "";
@@ -107,8 +101,10 @@ h1, h2, h3, h4, h5, h6 {
 .header._active {
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
-  opacity: 1;
-  visibility: visible;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 .header a {
   color: #ffffff;
@@ -175,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   font-size: 17px;
   font-family: sans-serif;
-  margin-bottom: 120px;
+  margin-bottom: 100px;
 }
 
 .nav__container {
@@ -1214,6 +1210,7 @@ img.open {
   padding: 40px 15px 0px 0px;
   margin-top: 50px;
   margin-bottom: -50px;
+  font-family: "Roca-Regular";
 }
 
 .teachers__items {
@@ -1250,7 +1247,7 @@ img.open {
 .teachers__item-main {
   height: auto;
   padding-right: 80px;
-  margin-bottom: 100px;
+  margin-bottom: 90px;
   position: relative;
 }
 .teachers__item-main .cloud {
@@ -1266,7 +1263,7 @@ img.open {
       -ms-flex: 0 1 25%;
           flex: 0 1 25%;
   padding-right: 80px;
-  margin-bottom: 100px;
+  margin-bottom: 90px;
   position: relative;
 }
 .teachers__item:nth-child(1) .teachers__text {
@@ -1379,6 +1376,7 @@ img.open {
   font-weight: 600;
   border-radius: 25px;
   background-color: #b37975;
+  font-size: 14px;
 }
 
 .teachers__name {
@@ -1387,7 +1385,7 @@ img.open {
 }
 
 .teachers__subject {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
 }
 
@@ -1729,8 +1727,10 @@ img.open {
 }
 
 .about {
-  height: 700px;
+  height: 710px;
+  padding-top: 40px;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .about__inner {
