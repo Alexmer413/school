@@ -54,7 +54,7 @@ if (animItems.length > 0) {
     }
 
 
-    //поыление шапки при прокрутке вверх
+    //появление шапки при прокрутке вверх
     let lastScroll = 0;
     // const defaultOffset = 200;
 
@@ -65,12 +65,11 @@ if (animItems.length > 0) {
     window.addEventListener('scroll', () => {
 
         if (scrollPosition() < lastScroll && !containActive() && window.scrollY > window.innerHeight) {
-            //scroll down
-            header.classList.add('_active');
-
-        }
-        else if (scrollPosition() > lastScroll && containActive() || window.scrollY < window.innerHeight) {
             //scroll up
+            header.classList.add('_active');
+        }
+        else if (scrollPosition() > lastScroll && containActive() || window.scrollY < window.innerHeight || (lastScroll - scrollPosition()) > window.innerHeight/10) {
+            //scroll down
             header.classList.remove('_active');
         }
 
@@ -187,8 +186,9 @@ if (navLinks.length > 0) {
                 // behavior: "smooth"
                 behavior: 'auto'
             });
-
+           
             e.preventDefault();
+
         }
     }
 }
