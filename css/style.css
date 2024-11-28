@@ -493,11 +493,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 @font-face {
   font-family: "Roca-Regular";
-  src: url(../../fonts/Roca-Regular.ttf);
+  src: url(../fonts/Roca-Regular.ttf);
 }
 @font-face {
   font-family: "Roca-Bold";
-  src: url(../../fonts/Roca-Bold.ttf);
+  src: url(../fonts/Roca-Bold.ttf);
 }
 .intro {
   width: 100%;
