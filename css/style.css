@@ -1082,7 +1082,7 @@ img.open {
   height: 700px;
   width: 100%;
   background-color: #ffffff;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .gallery__inner {
@@ -2052,8 +2052,8 @@ img.open {
   visibility: visible;
 }
 .popup_js.open .popup_js__content {
-  -webkit-transform: translate(0px, 35px);
-          transform: translate(0px, 35px);
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
   opacity: 1;
 }
 .popup_js.open .popup_js__content.teachers__content {
@@ -2066,8 +2066,8 @@ img.open {
   visibility: visible;
 }
 .popup_js.open.popup__js-news .popup_js__content {
-  -webkit-transform: perspective(600px) translate(0px, 35px) rotatex(0deg);
-          transform: perspective(600px) translate(0px, 35px) rotatex(0deg);
+  -webkit-transform: perspective(600px) translate(0px, 0px) rotatex(0deg);
+          transform: perspective(600px) translate(0px, 0px) rotatex(0deg);
   opacity: 1;
 }
 
@@ -2216,6 +2216,9 @@ img.open {
   font-size: 15px;
   overflow: scroll;
   overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .popup__news__info p {
   margin-bottom: 20px;
@@ -2230,16 +2233,19 @@ img.open {
 }
 
 .popup__news__info-title {
-  padding: 20px 0px;
+  margin-bottom: 20px;
   font-size: 18px;
   font-weight: 600;
 }
 
 .popup__news__photo {
-  width: 50%;
+  width: 35%;
+  height: auto;
+}
+
+.popup__news-img-cover {
   overflow: hidden;
   border-radius: 10px;
-  margin-bottom: 20px;
 }
 
 .popup__news__img {
@@ -2256,12 +2262,12 @@ img.open {
 }
 
 .popup__news__text {
-  width: 50%;
-  padding: 0px 15px;
+  width: 65%;
+  padding: 0px 20px;
 }
 
 .popup__news__info-subtitle {
-  padding: 15px 0px;
+  margin-bottom: 15px;
   font-size: 16px;
   font-weight: 600;
 }
@@ -2543,7 +2549,6 @@ h6 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #2c5847;
 }
 
 .news__item-main__photo {
@@ -2600,7 +2605,6 @@ h6 {
 .article__title {
   font-size: 18px;
   font-weight: 500;
-  color: #2c5847;
   margin-bottom: 10px;
 }
 
@@ -2612,7 +2616,6 @@ h6 {
 .article__subtitle {
   padding: 10px 0px;
   font-weight: 600;
-  color: #2c5847;
 }
 
 .article__info {
