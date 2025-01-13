@@ -171,15 +171,15 @@ if (navLinks.length > 0) {
             const gotoBlock = document.querySelector(navLink.dataset.goto);
             const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY ; //- document.querySelector('header').offsetHeight
 
-            /*    if (burger.classList.contains('_active')) {
+                if (burger.classList.contains('_active')) {
                     burger.classList.remove('_active');
                     nav.classList.remove('_active');
                     document.body.classList.remove('_lock');
-                    window.scrollTo({
+                   /* window.scrollTo({
                         top: gotoBlockValue,
                         behavior: "auto"
-                    });
-                }*/
+                    });*/
+                }
 
             window.scrollTo({
                 top: gotoBlockValue,

@@ -43,7 +43,7 @@ let pageSlider = new Swiper('.image-slider', {
             slidesPerView: 1,
         },
         480: {
-            slidesPerView: 2,
+            slidesPerView: 2.5,
         },
         992: {
             slidesPerView: 2.5,
