@@ -40,9 +40,9 @@ let pageSlider = new Swiper('.image-slider', {
 	},
     breakpoints: {
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1.5,
         },
-        480: {
+        370: {
             slidesPerView: 2.5,
         },
         992: {
