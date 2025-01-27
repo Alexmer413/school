@@ -3450,7 +3450,7 @@ img.open {
   }
   .popup_js__content-inner {
     width: 100%;
-    height: 100%;
+    height: 95%;
     border-radius: 15px;
     overflow: scroll;
     display: -webkit-box;
@@ -3466,13 +3466,12 @@ img.open {
   }
   .popup__js__photo {
     width: 100%;
-    height: 50%;
-    height: 400px;
+    height: auto;
     overflow: scroll;
   }
   .popup__js__info {
     width: 100%;
-    height: 400px;
+    height: auto;
     padding: 25px 0px 25px 35px;
   }
   .popup__js__info {
@@ -3482,7 +3481,7 @@ img.open {
     font-size: 20px;
     position: absolute;
     top: 15px;
-    right: 35px;
+    right: 15px;
     width: 30px;
     height: 30px;
   }
