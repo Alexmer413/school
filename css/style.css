@@ -3440,18 +3440,15 @@ img.open {
 }
 /*------------burger----------------*/
 @media (max-width: 767px) {
-  .popup__js-1 {
-    height: 100%;
-    overflow: scroll;
-  }
   .popup_js__body {
-    overflow: scroll;
+    height: 100%;
+    overflow: auto;
   }
   .popup_js__content {
     width: 100%;
     height: 100%;
     font-size: 20px;
-    overflow: scroll;
+    overflow: auto;
   }
   .price__content {
     padding: 15px;
@@ -3460,7 +3457,7 @@ img.open {
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    overflow: scroll;
+    overflow: auto;
     display: block;
   }
   .popup__js__photo {
