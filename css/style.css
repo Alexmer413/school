@@ -3440,6 +3440,13 @@ img.open {
 }
 /*------------burger----------------*/
 @media (max-width: 767px) {
+  .popup__js-1 {
+    height: 100%;
+    overflow: scroll;
+  }
+  .popup_js__body {
+    overflow: scroll;
+  }
   .popup_js__content {
     width: 100%;
     height: 100%;
