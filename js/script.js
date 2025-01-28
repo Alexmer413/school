@@ -270,6 +270,7 @@ function popupClose(popupActive, doUnlock = true) {
     }
 }
 
+
 function bodyLock() {
     const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth - 0.5 + 'px'; //вот эти -0.5 как-то корректируют величину 
     //   добавляемого пэддинга, видимо он округляется что-ли на каком-то этапе
@@ -306,12 +307,31 @@ function bodyUnLock() {
     }, timeOut);
 }
 
+//закрытие окна по esc
+
 document.addEventListener('keydown', function (e) {
     if (e.which === 27) {
         const popupActive = document.querySelector('.popup_js.open');
         popupClose(popupActive);
     }
 });
+
+//закрытие окна по кнопке назад
+useEffect(() => {
+    const handleBackButton = (event) => {
+      event.preventDefault();
+      // Здесь вы можете добавить логику для закрытия модального окна
+      const popupActive = document.querySelector('.popup_js.open');
+      popupClose(popupActive);
+    };
+
+    window.addEventListener('popstate', handleBackButton);
+
+    return () => {
+      window.removeEventListener('popstate', handleBackButton);
+    };
+  }, []);
+
 
 //дальше идут полифилы для свойств closest и matches
 //так как свойства новые, то, чтобы старый браузер понимал, что с ними делать
