@@ -2659,8 +2659,8 @@ img.open {
 .free__list li {
   list-style: none;
   position: relative;
-  -webkit-transform: translate(25%, 0px);
-          transform: translate(25%, 0px);
+  -webkit-transform: translate(10%, 0px);
+          transform: translate(10%, 0px);
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   opacity: 0;
@@ -2781,8 +2781,8 @@ img.open {
   .about__title {
     font-size: 22px;
     line-height: 1.5;
-    -webkit-transform: translate(0px, 120%);
-            transform: translate(0px, 120%);
+    -webkit-transform: translate(0px, 100%);
+            transform: translate(0px, 100%);
     opacity: 0;
     -webkit-transition: all 0.8s ease 0s;
     transition: all 0.8s ease 0s;
@@ -3450,19 +3450,10 @@ img.open {
   }
   .popup_js__content-inner {
     width: 100%;
-    height: 95%;
+    height: 100%;
     border-radius: 15px;
     overflow: scroll;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    display: block;
   }
   .popup__js__photo {
     width: 100%;
