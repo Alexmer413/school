@@ -256,6 +256,8 @@ function popupOpen(currentPopup) {
                 popupClose(e.target.closest('.popup_js'));
             }
         });
+
+        history.pushState({page: 1}, "title 1", "?page=1");
     }
 }
 
@@ -323,6 +325,7 @@ useEffect(() => {
       // Здесь вы можете добавить логику для закрытия модального окна
       const popupActive = document.querySelector('.popup_js.open');
       popupClose(popupActive);
+     // console.log('сработало')
     };
 
     window.addEventListener('popstate', handleBackButton);
